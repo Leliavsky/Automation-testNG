@@ -1,6 +1,8 @@
 package org.example.core;
 
-import org.example.bussiness.pages.HomePage;
+import org.example.bussiness.pages.NavigationBarPage;
+import org.example.bussiness.pages.LoginPage;
+import org.example.bussiness.pages.ProfilePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -18,7 +20,9 @@ public class PageFactoryManager {
         }
         return instance;
     }
-    public HomePage getHomePage() {
-        return PageFactory.initElements(driver, HomePage.class);
+    public LoginPage getLoginPage() {
+        return PageFactory.initElements(driver, LoginPage.class);
     }
+    public NavigationBarPage getNavigationPage(){return PageFactory.initElements(driver, NavigationBarPage.class);}
+    public ProfilePage getProfilePage(){return PageFactory.initElements(driver,ProfilePage.class);}
 }

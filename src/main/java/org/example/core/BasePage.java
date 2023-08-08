@@ -13,7 +13,7 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class BasePage {
-    private static final int TIMEOUT = 5;
+    private static final int TIMEOUT = 7;
     private static final int POLLING = 100;
 
     protected WebDriver driver;
@@ -34,13 +34,13 @@ public class BasePage {
                 TimeUnit.SECONDS);
     }
 
-    public void waitForPageLoadComplete(Duration timeToWait) {
-        new WebDriverWait(driver, timeToWait).until(
-                webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
+    public void waitForPageLoadComplete() {
+        wait.until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+                "return document.readyState").equals("complete"));
     }
 
-    public void waitForElementToDisappear(By locator) {
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+    public void waitForElementToDisappear(WebElement element) {
+        wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
     public void waitForTextToDisappear(By locator, String text) {

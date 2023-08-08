@@ -12,14 +12,18 @@ target/
 *.iml
 *.ipr
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.idea
+target
+test-output
+*.gitattributes
 
 ### NetBeans ###
 /nbproject/private/

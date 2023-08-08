@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends BasePage {
+public class LoginPage extends BasePage {
 
-    public HomePage(WebDriver driver){
+    public LoginPage(WebDriver driver){
         super(driver);
     }
     @FindBy(xpath = "//input[@placeholder='Login']")
@@ -19,6 +19,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement loginButton;
 
+    @FindBy(xpath = "//div[@class='notificationItem__message-container--16jY2 info']")
+    private WebElement loggedOutMessage;
+
     public void enterLogin(String login) {
         loginField.sendKeys(login);
     }
@@ -26,4 +29,7 @@ public class HomePage extends BasePage {
         passwordField.sendKeys(password);
     }
     public void clickOnLoginButton(){loginButton.click();}
+    public WebElement getLoggedOutMessage(){
+        return loggedOutMessage;
+    }
 }
