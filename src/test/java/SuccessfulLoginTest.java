@@ -16,9 +16,9 @@ public class SuccessfulLoginTest extends BaseTest {
         loginPage.enterPassword("1q2w3e");
         loginPage.clickOnLoginButton();
         NavigationBarPage navigationBarPage = PageFactoryManager.getInstance(driver).getNavigationPage();
-        navigationBarPage.implicitWait(2);
+        navigationBarPage.implicitWait();
         navigationBarPage.clickOnPopUpMessage();
-        navigationBarPage.implicitWait(2);
+        navigationBarPage.implicitWait();
         navigationBarPage.clickOnAccountIcon();
         navigationBarPage.clickOnProfileButton();
         ProfilePage profilePage = PageFactoryManager.getInstance(driver).getProfilePage();

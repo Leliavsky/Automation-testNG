@@ -13,7 +13,7 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class BasePage {
-    private static final int TIMEOUT = 7;
+    private static final int TIMEOUT = 5;
     private static final int POLLING = 100;
 
     protected WebDriver driver;
@@ -31,6 +31,10 @@ public class BasePage {
 
     public void implicitWait(long timeToWait) {
         driver.manage().timeouts().implicitlyWait(timeToWait,
+                TimeUnit.SECONDS);
+    }
+    public void implicitWait() {
+        driver.manage().timeouts().implicitlyWait(TIMEOUT,
                 TimeUnit.SECONDS);
     }
 
