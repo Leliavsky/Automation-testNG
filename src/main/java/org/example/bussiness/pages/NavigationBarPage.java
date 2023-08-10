@@ -33,8 +33,6 @@ public class NavigationBarPage extends BasePage {
     @FindBy(xpath = "//span[@class='supportBlock__support-btn--1VYZm']")
     private WebElement helpSupportButton;
 
-    @FindBy(xpath = "//div[@class='supportBlock__modal-header--1KWRk']")
-    private WebElement helpSupportWindow;
     public void clickOnAccountIcon(){
         accountIcon.click();
     }
@@ -45,6 +43,14 @@ public class NavigationBarPage extends BasePage {
 
     public void clickOnPopUpMessage(){
         signedInSuccessfullyMessage.click();
+    }
+
+    public boolean signedInSuccessfullyMessageIsDisplayed(){
+        return signedInSuccessfullyMessage.isDisplayed();
+    }
+
+    public WebElement getSignedInSuccessfullyMessage(){
+        return signedInSuccessfullyMessage;
     }
 
     public void clickOnLogoutButton(){
@@ -65,7 +71,5 @@ public class NavigationBarPage extends BasePage {
     public void clickOnHelpSupportButton(){
         helpSupportButton.click();
     }
-    public String getTextHelpSupportWindow(){
-        return helpSupportWindow.getText();
-    }
+
 }

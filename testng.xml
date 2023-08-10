@@ -3,7 +3,9 @@
     <test verbose="2" preserve-order="true" name="YourTestName">
         <classes>
             <class name="SuccessfulLoginTest"/>
+            <class name="SuccessfulLogoutTest"/>
             <class name="NavigationBarValidationTest"/>
+            <class name="ProfilePersonalInformationTest"/>
         </classes>
     </test>
 </suite>

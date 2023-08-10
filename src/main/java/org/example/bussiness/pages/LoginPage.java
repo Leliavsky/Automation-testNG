@@ -32,4 +32,7 @@ public class LoginPage extends BasePage {
     public WebElement getLoggedOutMessage(){
         return loggedOutMessage;
     }
+    public boolean loggedOutMessageIsDisplayed(){
+        return loggedOutMessage.isDisplayed();
+    }
 }

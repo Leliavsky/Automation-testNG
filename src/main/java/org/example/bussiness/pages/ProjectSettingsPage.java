@@ -13,7 +13,9 @@ public class ProjectSettingsPage extends BasePage {
     @FindBy(xpath = "//li[@class='pageBreadcrumbs__page-breadcrumbs-item--1GzrN']")
     private WebElement settingsTitle;
 
+
     public boolean settingsTitleIsDisplayed(){
         return settingsTitle.isDisplayed();
     }
+
 }

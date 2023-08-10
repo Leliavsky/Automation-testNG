@@ -6,18 +6,11 @@ import org.openqa.selenium.support.PageFactory;
 
 public class PageFactoryManager {
     private WebDriver driver;
-    private static PageFactoryManager instance;
 
-    private PageFactoryManager(WebDriver driver) {
+    public PageFactoryManager(WebDriver driver) {
         this.driver = driver;
     }
 
-    public static PageFactoryManager getInstance(WebDriver driver) {
-        if (instance == null) {
-            instance = new PageFactoryManager(driver);
-        }
-        return instance;
-    }
     public LoginPage getLoginPage() {
         return PageFactory.initElements(driver, LoginPage.class);
     }
@@ -45,4 +38,8 @@ public class PageFactoryManager {
     public DashboardsPage getDashBoardsPage() {
         return PageFactory.initElements(driver, DashboardsPage.class);
     }
+    public HelpSupportPage getHelpSupportPage() {
+        return PageFactory.initElements(driver, HelpSupportPage.class);
+    }
+
 }
