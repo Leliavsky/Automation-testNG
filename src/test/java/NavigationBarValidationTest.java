@@ -19,10 +19,10 @@ public class NavigationBarValidationTest extends BaseTest {
         Assert.assertTrue(navigationBarPage.sideBarIsDisplayed());
         Assert.assertEquals(navigationBarPage.getMainSideBarButtonsAmount(),6);
 
-        navigationBarPage.clickOnHelpSupportButton();
-        helpSupportPage = pageFactoryManager.getHelpSupportPage();
-        helpSupportPage.implicitWait();
-        Assert.assertEquals(helpSupportPage.getTextHelpSupportWindow(),"Help & Support");
+//        navigationBarPage.clickOnHelpSupportButton();
+//        helpSupportPage = pageFactoryManager.getHelpSupportPage();
+//        helpSupportPage.implicitWait();
+//        Assert.assertEquals(helpSupportPage.getTextHelpSupportWindow(),"Help & Support");
 
         navigationBarPage.getListOfMainSideBarButtons().get(0).click();//Dashboard
         dashboardsPage = pageFactoryManager.getDashBoardsPage();

@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 public class BasePage {
@@ -55,4 +56,7 @@ public class BasePage {
         action.moveToElement(element).perform();
     }
 
+    public String randomName(){
+        return "Name" + UUID.randomUUID().toString().replaceAll("-", "").substring(0, 5);
+    }
 }

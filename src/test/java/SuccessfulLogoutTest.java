@@ -14,6 +14,7 @@ public class SuccessfulLogoutTest extends BaseTest {
         loginPage.enterLogin("default");
         loginPage.enterPassword("1q2w3e");
         loginPage.clickOnLoginButton();
+
         navigationBarPage = pageFactoryManager.getNavigationPage();
         navigationBarPage.implicitWait();
         navigationBarPage.clickOnPopUpMessage();

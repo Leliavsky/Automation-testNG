@@ -14,16 +14,17 @@ public class ProfilePersonalInformationTest extends BaseTest {
     @Test
     public void verifyPersonalInformation(){
         loginPage = pageFactoryManager.getLoginPage();
-        loginPage.waitForPageLoadComplete();
         loginPage.enterLogin("default");
         loginPage.enterPassword("1q2w3e");
         loginPage.clickOnLoginButton();
+
         navigationBarPage = pageFactoryManager.getNavigationPage();
         navigationBarPage.implicitWait();
         navigationBarPage.clickOnPopUpMessage();
         navigationBarPage.implicitWait();
         navigationBarPage.clickOnAccountIcon();
         navigationBarPage.clickOnProfileButton();
+
         profilePage = pageFactoryManager.getProfilePage();
         Assert.assertEquals("NameTester",profilePage.getTextFromUserNameField());
         Assert.assertEquals("defaultemail@domain.com",profilePage.getTextFromUserEmailField());
@@ -35,12 +36,14 @@ public class ProfilePersonalInformationTest extends BaseTest {
         loginPage.enterLogin("default");
         loginPage.enterPassword("1q2w3e");
         loginPage.clickOnLoginButton();
+
         navigationBarPage = pageFactoryManager.getNavigationPage();
         navigationBarPage.implicitWait();
         navigationBarPage.clickOnPopUpMessage();
         navigationBarPage.implicitWait();
         navigationBarPage.clickOnAccountIcon();
         navigationBarPage.clickOnProfileButton();
+
         profilePage = pageFactoryManager.getProfilePage();
         profilePage.clickOnRemoveButton();
         profilePage.implicitWait();
