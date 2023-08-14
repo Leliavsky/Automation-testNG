@@ -1,11 +1,24 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="All Test Suite" parallel="classes">
     <test verbose="2" preserve-order="true" name="YourTestName">
         <classes>
             <class name="SuccessfulLoginTest"/>
             <class name="SuccessfulLogoutTest"/>
             <class name="NavigationBarValidationTest"/>
             <class name="ProfilePersonalInformationTest"/>
+            <class name="AddNewDashboardTest"/>
         </classes>
     </test>
+<!--    <test name="Test1" parallel="classes">-->
+<!--        <classes>-->
+<!--            <class name="SuccessfulLoginTest"/>-->
+<!--            <class name="NavigationBarValidationTest"/>-->
+
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Test2">-->
+<!--        <classes>-->
+<!--            <class name="SuccessfulLogoutTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
