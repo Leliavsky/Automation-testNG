@@ -2,7 +2,6 @@ import org.example.core.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
 
 public class SearchLineInDashboardTest extends BaseTest {
 

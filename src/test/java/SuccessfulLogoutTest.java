@@ -1,8 +1,6 @@
-import org.example.bussiness.pages.LoginPage;
-import org.example.bussiness.pages.NavigationBarPage;
-import org.example.bussiness.pages.ProfilePage;
+
 import org.example.core.BaseTest;
-import org.example.core.PageFactoryManager;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
