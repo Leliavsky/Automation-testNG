@@ -2,6 +2,8 @@ import org.example.core.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
+
 
 public class AddNewDashboardTest extends BaseTest {
 
@@ -24,6 +26,7 @@ public class AddNewDashboardTest extends BaseTest {
         navigationBarPage = pageFactoryManager.getNavigationPage();
         navigationBarPage.waitForElementToAppear(navigationBarPage.getSignedInSuccessfullyMessage());
         Assert.assertTrue(navigationBarPage.signedInSuccessfullyMessageIsDisplayed());
+        dashboardsPage.waitForPageLoadComplete();
         Assert.assertTrue(dashboardsPage.getTextFromNewDashboardTitle().equalsIgnoreCase(name));
     }
 }
