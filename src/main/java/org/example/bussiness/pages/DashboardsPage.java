@@ -14,7 +14,7 @@ public class DashboardsPage extends BasePage {
         super(driver);
     }
 
-    @FindBy(xpath = "//span[@title='All Dashboards']")
+    @FindBy(xpath = "//li[@class='pageBreadcrumbs__page-breadcrumbs-item--1GzrN']")
     private WebElement dashboardTitle;
 
     @FindBy(xpath = "//span[@class='ghostButton__text--eUa9T']")
@@ -35,6 +35,15 @@ public class DashboardsPage extends BasePage {
     @FindBy(xpath = "//a[@class='gridCell__grid-cell--3e2mS gridCell__align-left--2beIG dashboardTable__name--1sWJs']")
     private List<WebElement> resultAfterSearchLine;
 
+    @FindBy(xpath = "//i[@class='icon__icon--2m6Od icon__icon-delete--1jIHF']")
+    private WebElement trashIconElement;
+
+    @FindBy(xpath = "//i[@class='icon__icon--2m6Od icon__icon-pencil--2-R6b']")
+    private WebElement editIconElement;
+
+    @FindBy(xpath = "//button[@class='bigButton__big-button--ivY7j bigButton__color-tomato--Wvy5L']")
+    private WebElement deleteButton;
+
     public void clickOnAddNewDashboardButton() {
         addNewDashboardButton.click();
     }
@@ -48,6 +57,7 @@ public class DashboardsPage extends BasePage {
     }
 
     public void enterNameOfDashboard(String name) {
+        nameOfDashboardField.clear();
         nameOfDashboardField.sendKeys(name);
     }
 
@@ -62,11 +72,27 @@ public class DashboardsPage extends BasePage {
     public boolean dashboardTitleIsDisplayed() {
         return dashboardTitle.isDisplayed();
     }
+    public void clickOnDashboardTitle(){
+        dashboardTitle.click();
+    }
 
     public void enterTextToTheSearchLine(String text) {
+        searchLineText.clear();
         searchLineText.sendKeys(text);
     }
     public List<WebElement> getResultAfterSearchLine(){
         return resultAfterSearchLine;
+    }
+
+    public void clickOnTrashIconToDelete(){
+        trashIconElement.click();
+    }
+
+    public void clickOnDeleteButton(){
+        deleteButton.click();
+    }
+
+    public void clickOnEditIcon(){
+        editIconElement.click();
     }
 }
