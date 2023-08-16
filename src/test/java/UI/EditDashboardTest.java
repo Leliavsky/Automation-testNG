@@ -1,14 +1,13 @@
+package UI;
+
 import org.example.core.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
+public class EditDashboardTest extends BaseTest {
 
-
-public class AddNewDashboardTest extends BaseTest {
-
-    @Test(description  = "Add New Dashboard")
-    public void verifyAddNewDashboard(){
+    @Test
+    public void editDashboard(){
         loginPage = pageFactoryManager.getLoginPage();
         loginPage.enterLogin("default");
         loginPage.enterPassword("1q2w3e");
@@ -22,11 +21,21 @@ public class AddNewDashboardTest extends BaseTest {
         dashboardsPage.implicitWait();
         dashboardsPage.enterNameOfDashboard(name);
         dashboardsPage.clickOnAddButton();
+
+        sleep(1);
+        dashboardsPage.clickOnDashboardTitle();
         dashboardsPage.waitForPageLoadComplete();
-        navigationBarPage = pageFactoryManager.getNavigationPage();
-        navigationBarPage.waitForElementToAppear(navigationBarPage.getSignedInSuccessfullyMessage());
-        Assert.assertTrue(navigationBarPage.signedInSuccessfullyMessageIsDisplayed());
-        dashboardsPage.waitForPageLoadComplete();
-        Assert.assertTrue(dashboardsPage.getTextFromNewDashboardTitle().equalsIgnoreCase(name));
+        dashboardsPage.enterTextToTheSearchLine(name);
+        dashboardsPage.clickOnEditIcon();
+        name += " added text";
+        dashboardsPage.implicitWait();
+        dashboardsPage.enterNameOfDashboard(name);
+        dashboardsPage.implicitWait();
+        dashboardsPage.clickOnAddButton();
+        dashboardsPage.implicitWait();
+        dashboardsPage.enterTextToTheSearchLine(name);
+        sleep(1);
+        Assert.assertEquals(dashboardsPage.getResultAfterSearchLine().size(),1);
+        Assert.assertEquals(dashboardsPage.getResultAfterSearchLine().get(0).getText(), name);
     }
 }

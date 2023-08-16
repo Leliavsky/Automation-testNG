@@ -2,23 +2,23 @@
 <suite name="All Test Suite" parallel="classes">
     <test verbose="2" preserve-order="true" name="YourTestName">
         <classes>
-            <class name="SuccessfulLoginTest"/>
-            <class name="SuccessfulLogoutTest"/>
-            <class name="NavigationBarValidationTest"/>
-            <class name="ProfilePersonalInformationTest"/>
-            <class name="AddNewDashboardTest"/>
+            <class name="UI.SuccessfulLoginTest"/>
+            <class name="UI.SuccessfulLogoutTest"/>
+            <class name="UI.NavigationBarValidationTest"/>
+            <class name="UI.ProfilePersonalInformationTest"/>
+            <class name="UI.AddNewDashboardTest"/>
         </classes>
     </test>
 <!--    <test name="Test1" parallel="classes">-->
 <!--        <classes>-->
-<!--            <class name="SuccessfulLoginTest"/>-->
-<!--            <class name="NavigationBarValidationTest"/>-->
+<!--            <class name="UI.SuccessfulLoginTest"/>-->
+<!--            <class name="UI.NavigationBarValidationTest"/>-->
 
 <!--        </classes>-->
 <!--    </test>-->
 <!--    <test name="Test2">-->
 <!--        <classes>-->
-<!--            <class name="SuccessfulLogoutTest"/>-->
+<!--            <class name="UI.SuccessfulLogoutTest"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 </suite>

@@ -1,4 +1,4 @@
-
+package UI;
 
 import org.example.core.BaseTest;
 import org.testng.Assert;

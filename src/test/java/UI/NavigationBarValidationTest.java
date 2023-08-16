@@ -1,3 +1,5 @@
+package UI;
+
 import org.example.bussiness.pages.*;
 import org.example.core.BaseTest;
 import org.example.core.PageFactoryManager;
